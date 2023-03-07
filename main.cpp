@@ -645,6 +645,34 @@ return 0;
 // using namespace std;
 
 // int x,i,n,minx,maxx;
+// float sum,avg;
+
+// int main(){
+//   srand(time(NULL));
+//   n=5;
+//   sum=0;
+//   for(i=0;i<n;i++){
+//     x= (rand()%99);
+//     sum=sum+x;
+//     avg=sum/n;
+//     if(i<=0){
+//       minx=x;}
+//     if(minx>x)
+//       minx=x;
+//     if(x>maxx)
+//       maxx=x;
+//       cout<<x<<";";}
+//   cout<<endl<<"min="<<minx<<";"<<"max="<<maxx<<";"<<"sum="<<sum<<";"<<"avg="<<avg;
+// return 0;
+// }
+
+// #include<iostream>
+// #include<math.h>
+// #include<cstdlib>
+// #include<ctime>
+// using namespace std;
+
+// int x,i,n,minx,maxx;
 // int t[5];
 // float sum,avg;
 
@@ -817,17 +845,17 @@ return 0;
 // o nazwie dane umieszcza liczby od 9 do 0 (zobacz poniżej
 // jej reprezentację graficzną).
 
-#include<iostream>
-#include<math.h>
-using namespace std;
+// #include<iostream>
+// #include<math.h>
+// using namespace std;
 
-int dane[10],x;
-int main(){
-  for(x=0;x<10;x++){
-    dane[x]=10-1-x;
-    cout<<endl<<dane[x]<<";"<<" to indeks "<<x;
-  }
-}
+// int dane[10],x;
+// int main(){
+//   for(x=0;x<10;x++){
+//     dane[x]=10-1-x;
+//     cout<<endl<<dane[x]<<";"<<" to indeks "<<x;
+//   }
+// }
 
 //Tablice dwuwymiarowe
 
@@ -835,3 +863,56 @@ int main(){
 // 10×10 o nazwie macierz umieszcza na przekątnej liczbę 1,
 // a poza przekątną 0. Dodatkowo program powinien obliczać
 // sumę elementów wyróżnionych
+
+// #include<iostream>
+// #include<math.h>
+// using namespace std;
+// int tab[10][10],i,j,sum;
+// int main(){
+//   sum=0;
+//   for(i=0;i<10;i++){
+//     for(j=0;j<10;j++){
+//       if(i==j){
+//         tab[i][j]=1;
+//         sum=sum+tab[i][j];}
+//         else
+//         tab[i][j]=0;
+//       cout<<tab[i][j]<<'\t';
+//     }
+//     cout<<endl;
+//     }
+//   cout<<"suma elementów oznaczonych 1 wynosi "<<sum;
+// }
+
+// 4.4 Napisz program, który w zadeklarowanej tablicy dwuwymiarowej
+// 10×10 o nazwie macierz umieszcza na przekątnej liczby
+// od 0 do 9, a poza przekątną 0. Dodatkowo program powinien
+// obliczać sumę elementów wyróżnionych w tablicy, tj. znajdujących
+// się na jej przekątnej.
+
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+//const n = 10;
+int tab[10][10];
+int i,j,x,sum;
+
+int main(){
+  sum = 0;
+  for(i=0;i<10;i++){
+    for(j=0;j<10;j++){
+      if(i==j){
+      for(x=0;x<10;x++){
+        tab[x][x]=x;}
+        sum=sum+tab[i][j];
+        }
+      else
+        tab[i][j]=0;
+      cout<<tab[i][j]<<'\t';
+      }
+      cout<<endl;
+    }
+  cout<<endl<<"suma liczb z przekątnej wynosi: "<<sum;
+  return 0;
+  }
