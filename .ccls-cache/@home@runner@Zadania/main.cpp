@@ -795,3 +795,24 @@ return 0;
 // 4.1 Napisz program, który w 10-elementowej tablicy jednowymiarowej
 // o nazwie dane umieszcza liczby od 0 do 9 (zobacz
 // poniżej jej reprezentację graficzną).
+//Tablice
+
+// 4.1 Napisz program, który w 10-elementowej tablicy jednowymiarowej
+// o nazwie dane umieszcza liczby od 0 do 9 (zobacz
+// poniżej jej reprezentację graficzną).
+
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+int dane[10],x;
+int main(){
+  for(x=0;x<10;x++){
+    dane[x]=x;
+    cout<<endl<<dane[x]<<";"<<" to indeks "<<x;
+  }
+}
+
+// 4.2 Napisz program, który w 10-elementowej tablicy jednowymiarowej
+// o nazwie dane umieszcza liczby od 9 do 0 (zobacz poniżej
+// jej reprezentację graficzną).
