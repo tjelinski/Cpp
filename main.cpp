@@ -801,6 +801,22 @@ return 0;
 // o nazwie dane umieszcza liczby od 0 do 9 (zobacz
 // poniżej jej reprezentację graficzną).
 
+// #include<iostream>
+// #include<math.h>
+// using namespace std;
+
+// int dane[10],x;
+// int main(){
+//   for(x=0;x<10;x++){
+//     dane[x]=x;
+//     cout<<endl<<dane[x]<<";"<<" to indeks "<<x;
+//   }
+// }
+
+// 4.2 Napisz program, który w 10-elementowej tablicy jednowymiarowej
+// o nazwie dane umieszcza liczby od 9 do 0 (zobacz poniżej
+// jej reprezentację graficzną).
+
 #include<iostream>
 #include<math.h>
 using namespace std;
@@ -808,11 +824,14 @@ using namespace std;
 int dane[10],x;
 int main(){
   for(x=0;x<10;x++){
-    dane[x]=x;
+    dane[x]=10-1-x;
     cout<<endl<<dane[x]<<";"<<" to indeks "<<x;
   }
 }
 
-// 4.2 Napisz program, który w 10-elementowej tablicy jednowymiarowej
-// o nazwie dane umieszcza liczby od 9 do 0 (zobacz poniżej
-// jej reprezentację graficzną).
+//Tablice dwuwymiarowe
+
+// 4.3 Napisz program, który w zadeklarowanej tablicy dwuwymiarowej
+// 10×10 o nazwie macierz umieszcza na przekątnej liczbę 1,
+// a poza przekątną 0. Dodatkowo program powinien obliczać
+// sumę elementów wyróżnionych
