@@ -890,7 +890,7 @@ return 0;
 // obliczać sumę elementów wyróżnionych w tablicy, tj. znajdujących
 // się na jej przekątnej.
 
-#include<iostream>
+/*#include<iostream>
 #include<math.h>
 using namespace std;
 
@@ -915,4 +915,143 @@ int main(){
     }
   cout<<endl<<"suma liczb z przekątnej wynosi: "<<sum;
   return 0;
+  }*/
+
+/*4.5 Napisz program, który w zadeklarowanej tablicy dwuwymiarowej 10×10 o nazwie macierz (jej interpretacja graficzna poniżej) umieszcza liczby 1 i 0. Program powinien dodatkowo obliczać sumę wyróżnionych elementów.*/
+
+// #include<iostream>
+// using namespace std;
+
+// int macierz[10][10],x,y,sum;
+// int main(){
+//   sum=0;
+//   for(x=0;x<10;x++){
+//     for(y=0;y<10;y++){
+//       if(10==x+y+1)
+//         macierz[x][y]=1;
+//           else
+//             macierz[x][y]=0;
+//       sum=sum+macierz[x][y];
+//       cout<<macierz[x][y]<<"\t";}
+//     cout<<endl;
+//     }
+//   cout<<"suma 1 wynosi: "<<sum; 
+//   return 0;
+// }
+
+// 4.6 Napisz program, który w zadeklarowanej tablicy dwuwymiarowej
+// 10×10 o nazwie macierz (jej interpretacja graficzna poniżej)
+// umieszcza liczby od 0 do 9. Program powinien dodatkowo
+// obliczać sumę wyróżnionych elementów.
+
+/*#include<iostream>
+using namespace std;
+
+int macierz[10][10];
+int x,y,z,sum;
+int main(){
+  //const int n=10;
+  sum=0;
+  for(x=0;x<10;x++){
+    for(y=9;y>=0;y--){
+      if(y==x)
+        for(z=0;z<10;z++)
+          macierz[z][z]=z;
+        else
+            macierz[x][y]=0;
+        sum=sum+macierz[x][y];
+        cout<<macierz[x][y]<<"\t";
+    }
+    cout<<endl;
+  }
+  cout<<"suma liczb z przekątnej wynosi: "<<sum;
+  return 0;
+}*/
+
+//deklaracja klasy Postac 
+
+/*#include<iostream>
+using namespace std;
+class Postac{
+
+private:
+string nazwa;
+float sila;
+float magia;
+int zloto;
+int zycie;
+
+public:
+
+Postac (string nazwa, float sila, float magia, int zloto, int zycie){
+  this-> nazwa = nazwa;
+  this-> sila = sila;
+  this-> magia = magia;
+  this-> zloto = zloto;
+  this-> zycie = zycie;}
+
+void out(){
+  cout<<endl<<"----";
+  cout<<endl<<" nazwa "<<nazwa<<" sila "<<sila<<" magia "<<magia<<" zloto "<<zloto<<" zycie "<<zycie<<endl;
+  cout<<endl<<"____";
+}
+
+};
+
+int main(){
+  //Postac *KrólWikingów = new Postac("Król Wikingów",3,2,0,1);
+  //KrólWikingów->out();
+  Postac *p1 = new Postac ("Król", 3,2,0,1);
+  p1->out();
+  Postac *MistrzŁucznictwa = new Postac("Mistrz Łucznictwa",1,1,0,1);
+  MistrzŁucznictwa->out();
+  Postac *MistrzWalkiWręcz = new Postac("Mistrz Walki Wręcz",2,0,0,1);
+  MistrzWalkiWręcz->out();
+  return 0;
+}*/
+
+// deklaracja klasy Pojazd metoda out
+
+#include<iostream>
+using namespace std;
+
+class Pojazd{
+
+private:
+
+string marka,model;
+int rocznik;
+float cena;
+
+public:
+
+int count=1;
+int id;
+
+Pojazd (string marka, string model,int rocznik, float cena, int id){
+  this-> marka = marka;
+  this-> model = model;
+  this-> rocznik = rocznik;
+  this-> cena = cena;
+  this-> id = id;
+
+}
+
+void out(){
+  cout<<endl<<"marka "<<marka<<endl<<"model "<<model<<endl<<"rocznik "<<rocznik<<endl<<"cena "<<cena<<endl<<"id "<<id<<endl;;
+}
+
+static void sum(int count){
+  count++;}
+};
+
+int main(){
+  Pojazd *p1 = new Pojazd("Fiat","Punto Gtx",2000,27890.55,1);
+  p1->out();
+  Pojazd *p2 = new Pojazd("Lancia","Delta Integrale",1993,26900.87,2);
+  p2->out();
+  cout<<endl<<"liczba pojazdów :"<<Pojazd::sum;
+  delete p1;
+  delete p2;
+  return  0;
   }
