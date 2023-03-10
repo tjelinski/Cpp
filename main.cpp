@@ -1012,46 +1012,130 @@ int main(){
 
 // deklaracja klasy Pojazd metoda out
 
+// #include<iostream>
+// using namespace std;
+
+// class Pojazd{
+
+// private:
+
+// string marka,model;
+// int rocznik;
+// float cena;
+
+// public:
+
+// static int count;
+// int id;
+
+// Pojazd (string marka, string model,int rocznik, float cena, int id){
+//   this-> marka = marka;
+//   this-> model = model;
+//   this-> rocznik = rocznik;
+//   this-> cena = cena;
+//   this-> id = id;
+//   count++;
+// }
+
+// void out(){
+//   cout<<endl<<"marka "<<marka<<endl<<"model "<<model<<endl<<"rocznik "<<rocznik<<endl<<"cena "<<cena<<endl<<"id "<<id<<endl;;
+// }
+
+// static int sum(){
+//   return count;}
+// };
+
+// int main(){
+//   Pojazd *p1 = new Pojazd("Fiat","Punto Gtx",2000,27890.55,1);
+//   p1->out();
+//   Pojazd *p2 = new Pojazd("Lancia","Delta Integrale",1993,26900.87,2);
+//   p2->out();
+//   cout<<endl<<"liczba pojazdów :"<<p1->sum();
+//   delete p1;
+//   delete p2;
+//   return  0;
+//   }
+
+
+/*4.7 Napisz program, który w zadeklarowanej tablicy dwuwymiarowej 10×10 umieszcza w pierwszej kolumnie liczby od 0 do 9, w drugiej kwadraty tych liczb, natomiast w pozostałych kolumnach 0 (interpretacja graficzna tablicy poniżej). Dodatkowo program powinien obliczać sumę elementów znajdujących się w pierwszej kolumnie oraz sumę liczb z kolumny drugiej.*/
+/*
 #include<iostream>
 using namespace std;
 
-class Pojazd{
-
-private:
-
-string marka,model;
-int rocznik;
-float cena;
-
-public:
-
-int count=1;
-int id;
-
-Pojazd (string marka, string model,int rocznik, float cena, int id){
-  this-> marka = marka;
-  this-> model = model;
-  this-> rocznik = rocznik;
-  this-> cena = cena;
-  this-> id = id;
-
+int main(){
+  
+const int n = 10;
+int array[n][n],sum1,sum2;
+int x,y;
+  
+  for(x=0;x<n;x++){
+    for(y=0;y<n;y++){
+      if(y==0)
+      array[x][y]=x;
+      if(y==1)
+      array[x][y]=x*x;
+      if(y>1)
+      array[x][y]=0;
+      cout<<array[x][y]<<"\t";
+    }
+    cout<<endl;
+  }
+  
+  x=0;
+  y=0;
+  sum1=0;
+  sum2=0;
+  for(x=0;x<n;x++){
+    for(y=0;y<n;y++){
+      if(y==0)
+        sum1=sum1+array[x][y];
+      if(y==1)
+        sum2=sum2+array[x][y];
+    }
+  }
+  
+  cout<<"sum z 1 kol: "<<sum1;
+  cout<<endl;
+  cout<<"sum z 2 kol: "<<sum2;
+  return 0;
 }
+*/
+/*4.8Dane są dwie tablice dwuwymiarowe 10×10 o nazwach a i b. Tablica a zawiera elementy przedstawione poniżej.
+Tablica b zawiera same zera. Napisz program, który przepisuje zawartość tablicy a do tablicy b, zamieniając kolumny na wiersze (interpretacja graficzna tablicy wynikowej poniżej).
+*/
 
-void out(){
-  cout<<endl<<"marka "<<marka<<endl<<"model "<<model<<endl<<"rocznik "<<rocznik<<endl<<"cena "<<cena<<endl<<"id "<<id<<endl;;
-}
-
-static void sum(int count){
-  count++;}
-};
+#include<iostream>
+using namespace std;
 
 int main(){
-  Pojazd *p1 = new Pojazd("Fiat","Punto Gtx",2000,27890.55,1);
-  p1->out();
-  Pojazd *p2 = new Pojazd("Lancia","Delta Integrale",1993,26900.87,2);
-  p2->out();
-  cout<<endl<<"liczba pojazdów :"<<Pojazd::sum;
-  delete p1;
-  delete p2;
-  return  0;
-  }
+const int n=10;
+int ta[n][n],tb[n][n],x,y;
+
+	for(x=0;x<n;x++){
+		for(y=0;y<n;y++){
+			ta[x][y]=y;
+			cout<<ta[x][y]<<"\t";
+		}
+		cout<<endl;
+	}
+	cout<<endl;
+
+	for(x=0;x<n;x++){
+		for(y=0;y<n;y++){
+			tb[x][y]=0;
+			cout<<tb[x][y]<<"\t";
+		}
+		cout<<endl;
+	}
+	cout<<endl;
+
+	for(x=0;x<n;x++){
+		for(y=0;y<n;y++){
+			tb[x][y]=ta[y][x];
+			cout<<tb[x][y]<<"\t";
+		}
+		cout<<endl;
+	}
+	return 0;
+}
+
