@@ -1103,7 +1103,7 @@ int x,y;
 /*4.8Dane są dwie tablice dwuwymiarowe 10×10 o nazwach a i b. Tablica a zawiera elementy przedstawione poniżej.
 Tablica b zawiera same zera. Napisz program, który przepisuje zawartość tablicy a do tablicy b, zamieniając kolumny na wiersze (interpretacja graficzna tablicy wynikowej poniżej).
 */
-
+/*
 #include<iostream>
 using namespace std;
 
@@ -1131,11 +1131,13 @@ int ta[n][n],tb[n][n],x,y;
 
 	for(x=0;x<n;x++){
 		for(y=0;y<n;y++){
-			tb[y][x]=y;
-			cout<<tb[y][x]<<"\t";
+			tb[x][y]=ta[y][x];
+			cout<<tb[x][y]<<"\t";
 		}
 		cout<<endl;
 	}
 	return 0;
 }
+*/
+
 

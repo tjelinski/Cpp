@@ -1103,7 +1103,7 @@ int x,y;
 /*4.8Dane są dwie tablice dwuwymiarowe 10×10 o nazwach a i b. Tablica a zawiera elementy przedstawione poniżej.
 Tablica b zawiera same zera. Napisz program, który przepisuje zawartość tablicy a do tablicy b, zamieniając kolumny na wiersze (interpretacja graficzna tablicy wynikowej poniżej).
 */
-
+/*
 #include<iostream>
 using namespace std;
 
@@ -1138,4 +1138,31 @@ int ta[n][n],tb[n][n],x,y;
 	}
 	return 0;
 }
+*/
+
+//5 Podprogramy / Funkcje
+
+/*5.1 Napisz program obliczający pole prostokąta. Powinien on zawierać jeden podprogram: bezparametrową funkcję pole_ prostokata(), w której zawarty będzie algorytm obliczania pol a. Wartości boków a i b wprowadzamy z klawiatury. W programie należy założyć, że zmienne a, b oraz pole są typu float (rzeczywistego) i są one zmiennymi globalnymi. Należy dla nich przyjąć format wyświetlania ich z dwoma miejscami po kropce.*/
+
+/*
+#include<iostream>
+using namespace std;
+
+float pole,a,b;
+
+void pole_p (){
+	cout<<endl<<"obl. pole a*b za pomocą funkcji";
+	cout<<endl<<"wpr. a ";
+	cin>>a;
+	cout<<endl<<"wpr. b ";
+	cin>>b;
+	pole=a*b;
+	cout<<"pole wynosi: "<<pole;
+}
+
+int main(){
+	pole_p();
+return 0;
+}
+*/
 
