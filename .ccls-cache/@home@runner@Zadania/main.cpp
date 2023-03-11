@@ -1140,4 +1140,271 @@ int ta[n][n],tb[n][n],x,y;
 }
 */
 
+//5 Podprogramy / Funkcje
 
+/*5.1 Napisz program obliczający pole prostokąta. Powinien on zawierać jeden podprogram: bezparametrową funkcję pole_ prostokata(), w której zawarty będzie algorytm obliczania pol a. Wartości boków a i b wprowadzamy z klawiatury. W programie należy założyć, że zmienne a, b oraz pole są typu float (rzeczywistego) i są one zmiennymi globalnymi. Należy dla nich przyjąć format wyświetlania ich z dwoma miejscami po kropce.*/
+
+/*
+#include<iostream>
+using namespace std;
+
+float pole,a,b;
+
+void pole_p (){
+	cout<<endl<<"obl. pole a*b za pomocą funkcji";
+	cout<<endl<<"wpr. a ";
+	cin>>a;
+	cout<<endl<<"wpr. b ";
+	cin>>b;
+	pole=a*b;
+	cout<<"pole wynosi: "<<pole;
+}
+
+int main(){
+	pole_p();
+return 0;
+}
+*/
+
+/*5.2 Napisz program obliczający pole prostokąta. Powinien on zawierać jeden podprogram: bezparametrową funkcję pole_ prostokata, w której zawarty będzie algorytm obliczania pola. Wartości boków a i b wprowadzamy z klawiatury. W programie należy założyć, że zmienne a, b oraz pole są typu float (rzeczywistego) i są zmiennymi lokalnymi. Należy dla nich przyjąć format wyświetlania ich z dwoma miejscami po kropce.*/
+/*
+#include<iostream>
+using namespace std;
+
+void pole_p (){
+	float pole,a,b;
+	cout<<endl<<"obl. pole a*b za pomocą funkcji";
+	cout<<endl<<"wpr. a ";
+	cin>>a;
+	cout<<endl<<"wpr. b ";
+	cin>>b;
+	pole=a*b;
+	cout<<"pole wynosi: "<<pole;
+}
+
+int main(){
+	pole_p();
+return 0;
+}
+*/
+
+/*5.3 Napisz program obliczający pole prostokąta. Powinien on zawierać jeden podprogram: funkcję pole_prostokata(), do której parametry przekazywane są przez wartość. Wartości boków a i b wprowadzamy z klawiatury. W programie należy założyć, że zmienne a, b oraz pole są typu float (rzeczywistego) i są zmiennymi globalnymi. Należy dla nich przyjąć format wyświetlania ich z dwoma miejscami po kropce.*/
+
+/*#include<iostream>
+using namespace std;
+
+float pole,a,b;
+
+void pole_p (float a, float b){
+pole=a*b;
+cout << "pole wynosi: " << pole;
+}
+
+int main(){
+  cout<<endl<<"obl. pole a*b za pomocą funkcji";
+	cout<<endl<<"wpr. a ";
+	cin>>a;
+	cout<<endl<<"wpr. b ";
+	cin>>b;
+  pole_p(a,b);
+return 0;
+}*/
+
+/*5.4 Napisz program, który oblicza pole prostokąta. Powinien on zawierać trzy bezparametrowe funkcje: czytaj_dane(), przetworz_ dane() oraz wyswietl_wynik(). Wartości boków a i b wprowadzamy z klawiatury. W programie należy założyć, że zmienne a, b oraz pole są typu float (rzeczywistego) i są zmiennymi globalnymi. Należy dla nich przyjąć format wyświetlania ich z dwoma miejscami po kropce. Funkcja czytaj_ dane() czyta wartości boków a i b, przetworz_dane() oblicza pole prostokąta, a wyswietl_wynik() prezentuje wyniki na ekranie komputera.*/
+/*
+#include<iostream>
+using namespace std;
+
+float pole,a,b,wynik;
+
+void read (){
+	cout<<endl<<"obl. pole a*b za pomocą funkcji";
+	cout<<endl<<"wpr. a ";
+	cin>>a;
+	cout<<endl<<"wpr. b ";
+	cin>>b;
+}
+
+void count (){
+	pole=a*b;
+	wynik=pole;
+}
+
+void show (){
+	cout << "pole wynosi: " << wynik;
+}
+
+int main(){
+  
+  read();
+  count();
+	show();
+
+return 0;
+}
+*/
+
+/*5.5 Napisz program, który z wykorzystaniem instrukcji wyboru
+switch ... case oblicza pierwiastki równania kwadratowego
+ax2+bx+c = 0, gdzie zmienne a, b oraz c to liczby rzeczywiste
+wprowadzane z klawiatury. Dla zmiennych a, b, c, x1 oraz x2
+należy przyjąć format wyświetlania ich z dwoma miejscami
+po kropce. Program powinien zawierać trzy bezparametrowe
+funkcje: czytaj_dane(), przetworz_dane()i wyswietl_wynik().*/
+
+// #include<iostream>
+// #include<math.h>
+// #include<cstdlib>
+// using namespace std;
+
+// float a,b,c,x,x1,x2,delta;
+// int lp;
+
+// void read(){
+// 	cout << endl << "obliczamy pierwiastki ax2+bx+c=0";
+// 	cout << endl << "podaj a: ";
+// 	cin >> a;
+// 	if(a == 0)
+// 		while(a == 0){
+// 			cout << "podaj a różne od 0 :";
+// 				cin >> a;
+// 		}
+// 	if(a!=0)
+// 		cout << "podaj b: ";
+// 		cin >> b;
+// 		cout << "podaj c: ";
+// 		cin >> c;
+// 	}
+
+// 	void count(){
+// 		delta=b*b-(4*a*c);
+		
+// 		if(delta==0){
+// 			x=-b/(2*a);
+// 			lp=0;
+// 		}
+// 		if(delta>0){
+// 			x1=(-b-sqrt(delta))/(2*a);
+// 			x2=(-b+sqrt(delta))/(2*a);
+// 			lp=1;
+// 		}
+// 		//else 
+// 		if (delta<0)
+// 			lp=2;
+// 	}
+
+// 	void show(){
+// 	//int lp;
+// 	switch (lp) {
+//   case 0:
+//     cout << "jedno rozwiązanie, x: " << x;
+//     break;
+//   case 1:
+//     cout << "dwa rozwiazania, x1: " << x1 << " x2: " << x2;
+//     break;
+// 	case 2:
+//     cout << "brak rozwiazan";
+//     break;
+// 		}
+// }
+
+// int main(){
+// 	read();
+// 	count();
+// 	show();
+// 	return 0;
+// }
+
+// cwiczenia klasa komputer konstruktor wieloargumentowy
+
+// #include<iostream>
+// using namespace std;
+
+// class Komputer{
+
+// string rodzaj,hdd,ram,proc;
+// float pojemnosc,wielkosc;
+
+// public:
+// Komputer (string rodzaj,string hdd,string ram, string proc, float pojemnosc, float wielkosc){
+// 	this-> rodzaj=rodzaj;
+// 	this-> hdd=hdd;
+// 	this-> ram=ram;
+// 	this-> proc=proc;
+// 	this-> pojemnosc=pojemnosc;
+// 	this-> wielkosc=wielkosc;
+// }
+
+// void out(){
+// 	cout << endl << "typ: " << rodzaj << endl <<"dysk: " << hdd << endl << "ram: " << ram << endl << "ram W: " << wielkosc << endl << "hdd P: " << pojemnosc << endl << "procesor: " << proc<< endl;
+// }
+
+// };
+
+// int main(){
+// 	Komputer *pc1 = new Komputer("pc","hdd","dimm","amd",4096,500);
+// 	pc1->out();
+// 	Komputer *pc2 = new Komputer("notebook","ssd","sodimm","intel",8192,750);
+// 	pc2->out();
+// 	return 0;
+// }
+
+//cwiczenia tablice zelent https://miroslawzelent.pl/kurs-c++/tablice-w-c++/
+
+// #include<iostream>
+// using namespace std;
+
+// float array[5],sum,avg,x,n;
+// int main(){
+// 	sum=0;
+// 	n=5;
+// 	cout << endl<< "podaj oceny: ";
+// 	for(int i=0;i<n;i++){
+// 		cout << endl << i+1 << " ocena: ";
+// 		cin >> x;
+// 		array[i]=x;
+// 		sum = sum + array[i];
+// 		//sum += array[i]; //to samo co wyżej
+// 	}
+// 	avg=sum/n;
+// 	cout << "średnia z ocen : " << avg;
+// 	return 0;
+// }
+
+// #include<iostream>
+// //#include<iomanip>
+// using namespace std;
+
+// long double array[1000];
+// int n;
+// int main(){
+// 	n=100;
+// 	array[0]=1;
+// 	array[1]=1;
+// 	cout << endl << "ciąg fibonacciego" <<endl;
+// 	for(int i=2;i<n;i++){
+// 		array[i]=array[i-1]+array[i-2];
+// 		//cout<<setprecision(10000);
+//   	cout<<array[i]<<";";
+// 		}
+// 		cout<<"wyraz nr: "<< n <<" = "<< array[n-1]; 	
+// 		//}
+// 	return 0;
+// }
+
+#include<iostream>
+using namespace std;
+
+int const n = 11;
+int array[n][n],w,k;	
+
+int main(){
+	for(w=1;w<=n;w++){
+		for(k=1;k<=n;k++){
+			array[w][k]=w*k;
+			cout<<array[w][k]<<"\t";
+		}
+		cout<<endl;
+	}
+	return 0;
+}
