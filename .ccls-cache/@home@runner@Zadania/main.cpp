@@ -1392,19 +1392,178 @@ funkcje: czytaj_dane(), przetworz_dane()i wyswietl_wynik().*/
 // 	return 0;
 // }
 
-#include<iostream>
-using namespace std;
+// #include<iostream>
+// using namespace std;
 
-int const n = 11;
-int array[n][n],w,k;	
+// int const n = 11;
+// int array[n][n],w,k;	
 
-int main(){
-	for(w=1;w<=n;w++){
-		for(k=1;k<=n;k++){
-			array[w][k]=w*k;
-			cout<<array[w][k]<<"\t";
-		}
-		cout<<endl;
-	}
-	return 0;
-}
+// int main(){
+// 	for(w=1;w<=n-1;w++){
+// 		for(k=1;k<=n-1;k++){
+// 			array[w][k]=w*k;
+// 			cout<<array[w][k]<<"\t";
+// 		}
+// 		cout<<endl;
+// 	}
+// 	return 0;
+// }
+
+/*5.6 Napisz program, który w tablicy 10×10 umieszcza losowo na
+przekątnej cyfry od 0 do 9, a poza nią zera. Dodatkowo oblicza
+on sumę liczb znajdujących się na przekątnej. Program powinien
+zawierać trzy bezparametrowe funkcje: czytaj_dane(),
+przetworz_dane() i wyswietl_wynik(). Funkcja czytaj_dane()
+umieszcza dane w tablicy, przetworz_dane() oblicza sumę liczb
+znajdujących się na przekątnej, natomiast funkcja wyswietl_
+􀂴wynik() prezentuje zawartość tablicy na ekranie monitora.*/
+
+// #include<iostream>
+// #include<math.h>
+// using namespace std;
+
+// int const n=10;
+// int array[n][n],w,k,sum;
+
+// void read(){
+// 	srand(time(NULL));
+// 	for(w=0;w<=n-1;w++){
+// 		for(k=0;k<=n-1;k++){
+// 			if(w==k)
+// 			array[w][k]=(rand()%9);
+// 		}
+// 	cout<<endl;
+// 	}
+// }
+
+// void count(){
+// 	sum=0;
+// 	for(w=0;w<=n-1;w++){
+// 		for(k=0;k<=n-1;k++)
+// 		sum += array[w][k];
+// 		}
+// 	}
+
+// void show(){
+// 	for(w=0;w<=n-1;w++){
+// 		for(k=0;k<=n-1;k++){
+// 		cout<<array[w][k]<<"\t";
+// 		}
+// 	cout<<endl;
+// }
+// 	cout<<endl;
+// 	cout<<"suma liczb z przekątnej: "<<sum<<endl;
+// }
+
+// int main(){
+// 	read();
+// 	count();
+// 	show();
+// 	return 0;
+// }
+
+/*5.7 Napisz program, który sortuje n liczb wczytanych z klawiatury
+(w zadaniu jest ich sześć). Powinien on zawierać trzy bezparametrowe
+funkcje: czytaj_dane(), przetworz_dane() i wyswietl_
+􀂴wynik(). Funkcja czytaj_dane() czyta dane wprowadzone
+z klawiatury i umieszcza je w tablicy o nazwie liczby. Funkcja
+przetworz_dane() sortuje je według wybranego algorytmu
+(w programie należy zastosować algorytm sortowania bąbelkowego).
+Funkcja wyswietl_wynik() prezentuje natomiast zawartość
+posortowanej tablicy liczby na ekranie monitora.*/
+
+
+// #include<iostream>
+// #include<math.h>
+// using namespace std;
+
+// int const n = 6;
+// int numb[n],temp[n],x,y;
+
+// void read(){
+// cout<<endl<<"wpr: "<<n<<" liczb";
+// 	for(x=0;x<n;x++){
+// 		cout<<endl<<"wpr: "<<x+1<<" liczbe: ";
+// 		cin>>numb[x];
+// 	}
+// 	}
+
+// void count(){
+// 	for(x=0;x<n;x++)
+// 		for(y=0;y<n;y++)
+// 			if(numb[y]>numb[y+1]){
+// 				temp[y]=numb[y];
+// 			    numb[y]=numb[y+1];
+// 			    numb[y+1]=temp[y];
+// 			}
+// 	}
+
+// void show(){
+// 	cout<<endl<<"po sortowaniu bąbelkowym: ";
+// 	for(x=0;x<n;x++){
+// 		cout<<temp[x]<<";";}
+// }
+
+// int main(){
+// 	read();
+// 	count();
+// 	show();
+	
+// 	return 0;
+// }
+
+/*5.8 Napisz program, który losuje n liczb całkowitych (w zadaniu
+n = 10) z przedziału od 0 do 99, a następnie znajduje najmniejszą
+i największą z nich. Powinien on zawierać trzy bezparametrowe
+funkcje: czytaj_dane(), przetworz_dane() i wyswietl_
+wynik(). Funkcja czytaj_dane() losuje n całkowitych liczb od 0
+do 99. przetworz_dane() porównuje je ze sobą i ustala, która
+z nich jest najmniejsza oraz największa. Funkcja wyswietl_wynik()
+prezentuje natomiast największą i najmniejszą liczbę z wylosowanego
+zbioru.*/
+
+// #include<iostream>
+// #include<math.h>
+// using namespace std;
+
+// int const n = 10;
+// int x,minn,maxn,numbers[n];
+// void read(){
+// srand(time(NULL));
+// 	cout<<endl<<"losowanie liczb: ";
+// 		while(x<n){
+// 			numbers[x]=rand()%99;
+// 			cout<<numbers[x]<<";";
+// 			x++;
+// 		}
+// }
+
+// void count(){
+// 	x=0;
+// 	maxn=minn=numbers[1];
+// 	while(x<n){
+// 		if(maxn<numbers[x]){
+// 			maxn=numbers[x];
+// 		}
+// 		if(minn>numbers[x]){
+// 			minn=numbers[x];
+// 		}
+// 		x++;
+// 	}
+// }
+
+// void show(){
+// 	cout<<endl<<"min:"<<minn<<"\t"<<"max:"<<maxn;
+// }
+
+// int main(){
+// 	read();
+// 	count();
+// 	show();
+	
+// 	return 0;
+// }
+
+/*5.9 Napisz program, który dla x zmieniającego się od 0 do 5 z krokiem
+0,5 oblicza wartość funkcji y = x2+1.*/
+
