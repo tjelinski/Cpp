@@ -1567,3 +1567,45 @@ zbioru.*/
 /*5.9 Napisz program, który dla x zmieniającego się od 0 do 5 z krokiem
 0,5 oblicza wartość funkcji y = x2+1.*/
 
+// #include<iostream>
+// #include<math.h>
+// using namespace std;
+
+// int const n = 10;
+// float i,y,x;
+
+// void read_count(){
+// 	for(i=0;i<=n;i++){
+// 		if(i<1){
+// 			x=0;
+// 			y=x*x+1;}
+// 		else
+// 		x=x+0.5;
+// 		y=x*x+1;
+// 		cout<<endl<<"x= "<<i/2<<"\t"<<"y="<<y;
+// 	}	
+// }
+
+// int main(){
+// 	cout<<endl<<"obl. y=x^2+1 dla kroku 0,5 od 0 do 5";
+// 	read_count();
+// 	return 0;
+// }
+
+
+// 6
+// Programowanie obiektowe
+
+// 6.1 Napisz zgodnie z zasadami programowania obiektowego program,
+// który oblicza pole prostokąta. Klasa powinna zawierać
+// trzy metody:
+// 􀁔 czytaj_dane() — umożliwia wprowadzenie do programu
+// wartości boków a i b z klawiatury. W programie należy
+// przyjąć, że boki oraz zmienna pole są typu float
+// (rzeczywistego).
+// 􀁔 przetworz_dane() — oblicza pole prostokąta według wzoru
+// pole = a*b.
+// 􀁔 wyswietl_wynik() — wyświetla wartości boków a i b oraz
+// zmiennej pole w określonym formacie. Dla tych trzech
+// zmiennych należy przyjąć format wyświetlania ich na
+// ekranie z dwoma miejscami po kropce.
