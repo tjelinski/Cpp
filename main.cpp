@@ -1609,3 +1609,68 @@ zbioru.*/
 // zmiennej pole w określonym formacie. Dla tych trzech
 // zmiennych należy przyjąć format wyświetlania ich na
 // ekranie z dwoma miejscami po kropce.
+
+// #include<iostream>
+// #include<math.h>
+// using namespace std;
+
+// class Pole_p{
+
+// public:
+// float ba,bb,pole;
+
+// Pole_p(float ba, float bb){
+// 	this-> ba=ba;
+// 	this-> bb=bb;
+// }
+
+// void read(){
+// 	cout<<endl<<"podaj a: ";
+// 	cin>>ba;
+// 	cout<<endl<<"podaj b: ";
+// 	cin>>bb;
+// }
+
+// void count(){
+// 	pole=ba*bb;
+// }
+	
+// void out(){
+// 	cout<<endl<<"pole wynosi: "<<pole;
+// }
+
+// };
+
+// int main(){
+// 	Pole_p *p1= new Pole_p(5,5);
+// 	p1->count();
+// 	p1->out();
+	
+// 	Pole_p *p2= new Pole_p(4.5,5);
+// 	p2->count();
+// 	p2->out();
+	
+// 	Pole_p *p3= new Pole_p(1.1,5);
+// 	p3->count();
+// 	p3->out();
+	
+// 	Pole_p *p4= new Pole_p(7.987,5.1236758);
+// 	p4->count();
+// 	p4->out();
+	
+// }
+
+/*6.2 Napisz zgodnie z zasadami programowania obiektowego
+program, który oblicza pierwiastki równania kwadratowego
+ax2+bx+c = 0 z wykorzystaniem instrukcji wyboru switch ...
+case. Klasa powinna zawierać trzy metody:
+􀁔 czytaj_dane() — jest odpowiedzialna za wczytanie danych
+do programu oraz obsłużenie sytuacji, kiedy a = 0. Zmienne
+a, b oraz c to liczby rzeczywiste wprowadzane z klawiatury.
+􀁔 przetworz_dane() — odpowiada za wykonanie niezbędnych
+obliczeń.
+􀁔 wyswietl_wynik() — jest odpowiedzialna za pokazanie
+wyników na ekranie monitora. Dla zmiennych a, b, c, x1
+oraz x2 należy przyjąć format wyświetlania ich z dwoma
+miejscami po kropce.*/
+
