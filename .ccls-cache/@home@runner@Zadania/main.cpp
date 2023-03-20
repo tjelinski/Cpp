@@ -1674,3 +1674,243 @@ wyników na ekranie monitora. Dla zmiennych a, b, c, x1
 oraz x2 należy przyjąć format wyświetlania ich z dwoma
 miejscami po kropce.*/
 
+// #include<iostream>
+// #include<math.h>
+// #include <iomanip>
+// using namespace std;
+
+// class mat{
+
+// public:
+
+// float a,b,c,d,x,x1,x2;
+// int i,lp;
+
+// mat(float a, float b, float c){
+// 	this->a=a;
+// 	this->b=b;
+// 	this->c=c;
+// }
+
+// //};
+
+// void read(){
+// 	//float a,b,c,i;
+// 	cout<<endl<<"wpr a!=0 :";
+// 	cin>>a;
+// 	cout<<endl;
+// 	if(a==0)
+// 		while(a==0){
+// 		cout<<endl<<"wpr a<0 || a>0";
+// 			cin>>a;
+// 			i++;
+// 		}
+// 		cout<<endl<<"wpr b: ";
+// 		cin>>b;
+// 		cout<<endl<<"wpr c: ";
+// 		cin>>c;
+// }
+
+// void count(){
+// 	cout<<endl;
+// 	cout<<a<<";"<<b<<";"<<c;
+// 	cout<<endl;
+// 	int lp;
+// 	d=b*b-4*a*c;
+// 	if(d==0){
+// 		x=-b/(2*a);
+// 		lp=0;}
+// 	if(d<0)
+// 		lp=1;
+// 	if(d>0){
+// 		x1=(-b-sqrt(d))/(2*a);
+// 		x2=(-b+sqrt(d))/(2*a);
+// 		lp=2;}
+// }
+
+// void out(){
+// 	int lp;
+// 	switch (lp){
+// 		case 0:
+// 		cout<<endl<<"1 pierwiastek : "<<setprecision(2)<<x;
+// 		break;
+// 		case 1:
+// 		cout<<endl<<"brak roz.";
+// 		break;
+// 		case 2:
+// 		cout<<endl<<"2 pierwiatki : "<<x1<<setprecision(2)<<"\t"<<setprecision(2)<<x2;
+// 		break;
+// 	}
+// }
+// };
+
+// int main(){
+// mat *dane1= new mat(1.02,5,4);
+// mat *dane2= new mat(1,2,1);
+// mat *dane3= new mat(1,5,4);
+// mat *dane4= new mat(1,3,5);
+// mat *dane5= new mat(9,6,1);
+// //dane1->read();
+// dane1->count();
+// dane1->out();
+// cout<<endl;
+
+// //dane2->read();
+// dane2->count();
+// dane2->out();
+// cout<<endl;
+
+// //dane3->read();
+// dane3->count();
+// dane3->out();
+// cout<<endl;
+
+// //dane4->read();
+// dane4->count();
+// dane4->out();
+// cout<<endl;
+
+// //dane5->read();
+// dane5->count();
+// dane5->out();
+// cout<<endl;
+
+// return 0;
+// }
+
+/*6.3 Napisz zgodnie z zasadami programowania obiektowego program,
+który w tablicy 10×10 umieszcza losowo na przekątnej
+liczby od 0 do 9, a poza nią zera. Dodatkowo oblicza on sumę
+liczb znajdujących się na przekątnej. Klasa powinna zawierać
+trzy metody:
+􀁔 czytaj_dane() — umieszcza dane w tablicy;
+􀁔 przetworz_dane() — oblicza i wyświetla sumę liczb
+znajdujących się na przekątnej;
+􀁔 wyswietl_wynik() — pokazuje zawartość tablicy na ekranie*/
+
+// #include<iostream>
+// #include<math.h>
+// #include<ctime>
+// using namespace std;
+
+// class wynik{
+
+// public:
+
+// int tab[10][10],w,k,i,sum;
+
+// wynik(){}
+// //wynik(int tab[10][10]){
+// //	this->tab[10][10]=tab[10][10];
+// //}
+// //};
+
+// void read(){
+//     //int tab[10][10];
+// 	srand(time(NULL));
+// 	for(w=0;w<10;w++){
+// 		for(k=0;k<10;k++){
+// 			if(w==k)
+// 				tab[w][k]= rand()%9;
+// 			else
+// 				tab[w][k]=0;}
+// 	cout<<endl;
+// 	}
+// }
+
+// void count(){
+//     //int tab[10][10];
+// 	sum=0;
+// 	for(i=0;i<10;i++)
+//   sum+=tab[i][i];
+// }
+
+// void show(){
+// w=0;
+// k=0;
+// for(w=0;w<10;w++){
+// 	for(k=0;k<10;k++){
+// 	cout<<tab[w][k];
+// 	}
+// 	cout<<endl;
+// }
+// 	cout<<"suma ="<<sum;
+// }
+// };
+
+// int main(){
+// wynik *w1 = new wynik();
+// w1->read();
+// w1->count();
+// w1->show();
+// return 0;
+// }
+
+// 6.4 Napisz zgodnie z zasadami programowania obiektowego program,
+// który sortuje n liczb (w zadaniu jest ich sześć). Klasa
+// powinna zawierać trzy metody:
+// 􀁔 czytaj_dane() — odczytuje dane i umieszcza je w tablicy
+// o nazwie liczby;
+// 􀁔 przetworz_dane() — sortuje dane, korzystając z wybranego
+// algorytmu (w programie zastosowano algorytm
+// sortowania bąbelkowego);
+// 􀁔 wyswietl_wynik() — prezentuje zawartość posortowanej
+// tablicy liczby na ekranie monitora.
+
+
+#include<iostream>
+#include<math.h>
+#include<ctime>
+using namespace std;
+	
+class sort{
+
+public:
+static int const n=10;
+int tab[n],i,j,temp;
+void read();
+void process();
+void show();
+
+};
+
+void sort::read(){
+	cout<<endl<<"przed : "<<"\t";
+	srand(time(NULL));
+	for(i=0;i<n;i++){
+		tab[i]=(rand()%100)-100;
+		cout<<tab[i]<<";";
+	}
+}
+	
+void sort::process(){
+	int temp;
+	for(i=0;i<n;i++){
+ 		for(j=0;j<n;j++)
+ 			if(tab[j]>tab[j+1]){
+ 				temp=tab[j];
+ 			  tab[j]=tab[j+1];
+ 			  tab[j+1]=temp;
+			}
+		}
+	}
+
+	void sort::show(){
+		cout<<endl<<"po : "<<"\t"<<"\t";
+		for(i=0;i<n;i++)
+			cout<<tab[i]<<";";
+	}	
+
+int main(){
+sort s1,s2,s3;
+	s1.read();
+	s1.process();
+	s1.show();
+	s2.read();
+	s2.process();
+	s2.show();
+	s3.read();
+	s3.process();
+	s3.show();
+return 0;	
+}
