@@ -1857,60 +1857,159 @@ znajdujących się na przekątnej;
 // 􀁔 wyswietl_wynik() — prezentuje zawartość posortowanej
 // tablicy liczby na ekranie monitora.
 
+// #include<iostream>
+// #include<math.h>
+// #include<ctime>
+// using namespace std;
+	
+// class sort{
+
+// public:
+// static int const n=10;
+// int tab[n],i,j,temp;
+// void read();
+// void process();
+// void show();
+
+// };
+
+// void sort::read(){
+// 	cout<<endl<<"przed : "<<"\t";
+// 	srand(time(NULL));
+// 	for(i=0;i<n;i++){
+// 		tab[i]=(rand()%100)-100;
+// 		cout<<tab[i]<<";";
+// 	}
+// }
+	
+// void sort::process(){
+// 	int temp;
+// 	for(i=0;i<n;i++){
+//  		for(j=0;j<n;j++)
+//  			if(tab[j]>tab[j+1]){
+//  				temp=tab[j];
+//  			  tab[j]=tab[j+1];
+//  			  tab[j+1]=temp;
+// 			}
+// 		}
+// 	}
+
+// 	void sort::show(){
+// 		cout<<endl<<"po : "<<"\t"<<"\t";
+// 		for(i=0;i<n;i++)
+// 			cout<<tab[i]<<";";
+// 	}	
+
+// int main(){
+// sort s1,s2,s3;
+// 	s1.read();
+// 	s1.process();
+// 	s1.show();
+// 	s2.read();
+// 	s2.process();
+// 	s2.show();
+// 	s3.read();
+// 	s3.process();
+// 	s3.show();
+// return 0;	
+// }
+
+//klasy zadania
+
+// 1. Napisz program obliczający pole powierzchni prostopadłościanu (klasa Prostopadloscian o polach
+// a,b,c). 
 
 #include<iostream>
 #include<math.h>
-#include<ctime>
+#include <iomanip>
+#include<cmath>
 using namespace std;
-	
-class sort{
+
+class Ppn{
 
 public:
-static int const n=10;
-int tab[n],i,j,temp;
-void read();
-void process();
-void show();
+float a,b,c,pole;
+
+Ppn(float a,float b,float c){
+	this->a=a;
+	this->b=b;
+	this->b=b;
+}
+void polePpn(){
+	pole = 2*(a*b+b*c+a*c);
+	cout<<"pole Ppn wynosi: "<<setprecision(4)<<pole;
+}
+
+//~Ppn(){cout<<"destruktor";}
 
 };
 
-void sort::read(){
-	cout<<endl<<"przed : "<<"\t";
-	srand(time(NULL));
-	for(i=0;i<n;i++){
-		tab[i]=(rand()%100)-100;
-		cout<<tab[i]<<";";
-	}
-}
-	
-void sort::process(){
-	int temp;
-	for(i=0;i<n;i++){
- 		for(j=0;j<n;j++)
- 			if(tab[j]>tab[j+1]){
- 				temp=tab[j];
- 			  tab[j]=tab[j+1];
- 			  tab[j+1]=temp;
-			}
-		}
-	}
-
-	void sort::show(){
-		cout<<endl<<"po : "<<"\t"<<"\t";
-		for(i=0;i<n;i++)
-			cout<<tab[i]<<";";
-	}	
-
 int main(){
-sort s1,s2,s3;
-	s1.read();
-	s1.process();
-	s1.show();
-	s2.read();
-	s2.process();
-	s2.show();
-	s3.read();
-	s3.process();
-	s3.show();
-return 0;	
+	Ppn *Ppn1 = new Ppn(2.1,2.1,2.1);
+	Ppn1->polePpn();
+	return 0;
 }
+
+// #include<iostream>
+// #include<math.h>
+// #include <iomanip>
+// #include<cmath>
+// using namespace std;
+
+// class Ppn{
+
+// public:
+// float a,b,c,pole;//pola
+// void Ppno();// deklaracja metody
+// };
+
+// void Ppn::Ppno(){ //definicja metody
+//     float a=b=c=2.1;
+// 		pole = 2*(a*b+b*c+a*c);
+// 		cout<<"pole Ppn wynosi: "<<setprecision(4)<<pole;
+// }
+
+// int main(){
+// 	Ppn w1; // tworze obiekt w1
+// 	w1.Ppno(); //wywołanie metody dla w1
+// 	return 0;
+// }
+
+//Napisz program obliczający objętość prostopadłościanu (klasa Prostopadloscian o polach a,b,c) 
+
+// #include<iostream>
+// #include<math.h>
+// #include <iomanip>
+// using namespace std;
+
+// class oVp{
+// public:
+// float a,b,c,v,p;
+
+// oVp(float a, float b, float c){
+// 	this-> a = a;
+// 	this-> b = b;
+// 	this-> c = c;
+// }
+
+// void V(){
+// 	v=a*b*c;
+// 	p=2*(a*b+b*c+a*c);
+// 	cout<<endl<<"objetość wynosi: "<<v;
+// 	cout<<endl<<"pole wynosi: "<<p;
+// }
+
+// ~oVp(){cout<<endl<<"destruktor";}
+
+// };
+
+// int main(){
+// oVp *oVp1 = new oVp(2.1,2.1,2.1);
+// oVp1->V();
+	
+// return 0;
+// }
+
+//3. Napisz program obliczający pole powierzchni kuli (klasa Kula o polu r). 
+
+
