@@ -1919,36 +1919,36 @@ znajdujących się na przekątnej;
 // 1. Napisz program obliczający pole powierzchni prostopadłościanu (klasa Prostopadloscian o polach
 // a,b,c). 
 
-#include<iostream>
-#include<math.h>
-#include <iomanip>
-#include<cmath>
-using namespace std;
+// #include<iostream>
+// #include<math.h>
+// #include <iomanip>
+// #include<cmath>
+// using namespace std;
 
-class Ppn{
+// class Ppn{
 
-public:
-float a,b,c,pole;
+// public:
+// float a,b,c,pole;
 
-Ppn(float a,float b,float c){
-	this->a=a;
-	this->b=b;
-	this->b=b;
-}
-void polePpn(){
-	pole = 2*(a*b+b*c+a*c);
-	cout<<"pole Ppn wynosi: "<<setprecision(4)<<pole;
-}
+// Ppn(float a,float b,float c){
+// 	this->a=a;
+// 	this->b=b;
+// 	this->b=b;
+// }
+// void polePpn(){
+// 	pole = 2*(a*b+b*c+a*c);
+// 	cout<<"pole Ppn wynosi: "<<setprecision(4)<<pole;
+// }
 
-//~Ppn(){cout<<"destruktor";}
+// //~Ppn(){cout<<"destruktor";}
 
-};
+// };
 
-int main(){
-	Ppn *Ppn1 = new Ppn(2.1,2.1,2.1);
-	Ppn1->polePpn();
-	return 0;
-}
+// int main(){
+// 	Ppn *Ppn1 = new Ppn(2.1,2.1,2.1);
+// 	Ppn1->polePpn();
+// 	return 0;
+// }
 
 // #include<iostream>
 // #include<math.h>
@@ -1975,7 +1975,7 @@ int main(){
 // 	return 0;
 // }
 
-//Napisz program obliczający objętość prostopadłościanu (klasa Prostopadloscian o polach a,b,c) 
+// 2.Napisz program obliczający objętość prostopadłościanu (klasa Prostopadloscian o polach a,b,c) 
 
 // #include<iostream>
 // #include<math.h>
@@ -2010,6 +2010,59 @@ int main(){
 // return 0;
 // }
 
-//3. Napisz program obliczający pole powierzchni kuli (klasa Kula o polu r). 
+//3. / 4. Napisz program obliczający pole powierzchni i objętość kuli (klasa Kula o polu r). 
 
+#include<iostream>
+#include<math.h>
+#include<iomanip>
+using namespace std;
 
+class P_V_k{
+
+private:
+float r;//,p,v;
+
+public:
+float p,v;
+P_V_k(float r){
+this-> r = r;
+}
+
+//friend void P(P_V_k* pvk1,float r,float p);
+friend void P(P_V_k pvk1, float r,float p);
+//friend void V(P_V_k* pvk2,float r,float v);
+friend void V(P_V_k pvk2, float r,float v);
+
+void out(){
+	cout<<"obiekt o 'r':"<<r<<endl;
+}
+void out2(){
+	cout<<endl<<"r: "<<r<<" pole: "<<p<<endl;
+	cout<<endl<<"r: "<<r<<" objetość: "<<endl<<v;
+}
+
+};
+void P(P_V_k *pvk1,float r){//,float p){
+//void P(P_V_k pvk1, float r){//,float p){
+	//pvk1.p=4*M_PI*r*r;
+	pvk1->p=4*M_PI*r*r;
+}
+
+void V(P_V_k *pvk2,float r){//,float v){
+//void V(P_V_k pvk2, float r,float v){
+	//pvk2.v=4/3*(M_PI*r*r*r);
+	pvk2->v=4*(M_PI*r*r*r)/3;
+}
+
+int main(){
+	cout<<endl<<"obl. pole i objętość kuli"<<endl;
+	P_V_k *pvkW = new P_V_k(6);
+	pvkW->out();
+	P(pvkW,6);
+	V(pvkW,6);
+	//pvk1->P();
+	//pvk1->V();
+	pvkW->out2();
+	
+	return 0;
+}
