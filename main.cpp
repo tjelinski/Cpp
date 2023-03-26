@@ -2071,68 +2071,211 @@ znajdujących się na przekątnej;
 // 	return 0;
 // }
 
-//5. / 6 Napisz program obliczający pole powierzchni walca oraz jego objętość (klasa Walec o polach r,l).
+//5. / 6. Napisz program obliczający pole powierzchni walca oraz jego objętość (klasa Walec o polach r,l).
 
-#include<iostream>
-#include<math.h>
-#include<iomanip>
-using namespace std;
+// #include<iostream>
+// #include<math.h>
+// #include<iomanip>
+// using namespace std;
 
-class walec{
+// class walec{
 
-private:
-float r,h;
+// private:
+// float r,h;
 
-public:
-float pp,p,v;
+// public:
+// float pp,p,v;
 
-walec(){}
+// walec(){}
 
-walec(float r, float h){
-	this->r = r;
-	this->h = h;
-}
+// walec(float r, float h){
+// 	this->r = r;
+// 	this->h = h;
+// }
 
-friend void P(walec a){};
-friend void Pp(walec b, float r, float h){};
-friend void V(walec c, float r, float h){};
+// friend void P(walec a){};
+// friend void Pp(walec b, float r, float h){};
+// friend void V(walec c, float r, float h){};
 
-void out() const {
-	cout<<endl<<"pola i objętość walca";
-	cout<<endl<<"pole podstawy: "<<setprecision(6)<<pp;
-	cout<<endl<<"pole: "<<setprecision(6)<<p;
-	cout<<endl<<"objętość: "<<setprecision(6)<<v;
-}
+// void out() const {
+// 	cout<<endl<<"pola i objętość walca";
+// 	cout<<endl<<"pole podstawy: "<<setprecision(6)<<pp;
+// 	cout<<endl<<"pole: "<<setprecision(6)<<p;
+// 	cout<<endl<<"objętość: "<<setprecision(6)<<v;
+// }
 
-//~walec();
-};
+// //~walec();
+// };
 
-void P(walec* a, float r, float h){
-	a->p=2*M_PI*r*(r+h);
-}
+// void P(walec* a, float r, float h){
+// 	a->p=2*M_PI*r*(r+h);
+// }
 
-void Pp(walec* b, float r, float h){
-	b->pp=2*M_PI*r*h;
-}
+// void Pp(walec* b, float r, float h){
+// 	b->pp=2*M_PI*r*h;
+// }
 
-void V(walec* c, float r, float h){
-	c->v=M_PI*r*r*h;
-}
+// void V(walec* c, float r, float h){
+// 	c->v=M_PI*r*r*h;
+// }
 
-int main(){
-	walec* w1 = new walec(5,5);
-	P(w1,5,5);
-	Pp(w1,5,5);
-	V(w1,5,5);
-	w1->out();
+// int main(){
+// 	walec* w1 = new walec(5,5);
+// 	P(w1,5,5);
+// 	Pp(w1,5,5);
+// 	V(w1,5,5);
+// 	w1->out();
 	
-	cout<<endl;
+// 	cout<<endl;
 	
-	walec *w2 = new walec(6,6);
-	P(w2,6,6);
-	Pp(w2,6,6);
-	V(w2,6,6);
-	w2->out();
+// 	walec *w2 = new walec(6,6);
+// 	P(w2,6,6);
+// 	Pp(w2,6,6);
+// 	V(w2,6,6);
+// 	w2->out();
 	
-return 0;
-}
+// return 0;
+// }
+
+// 11. Napisz program, który oblicza wysokość podatku dochodowego dla podanej podstawy obliczenia
+// podatku. Podatek wynosił będzie 18 % z podstawy dochodu minus kwota zmniejszająca podatek
+// 556 zł 02 gr (klasa Podatnik o polach: imie, nazwisko, podstawa_podatku). 
+
+// #include<iostream>
+// #include<math.h>
+// #include<iomanip>
+// using namespace std;
+
+// class podatekDochodowy
+// {
+// private:
+// 	string imie;
+// 	string nazwisko;
+// 	double podstawaPodatku;
+// public:
+// 	podatekDochodowy(string imie,string nazwisko, double podstawaPodatku)
+// {
+// 	this-> imie= imie;
+// 	this-> nazwisko= nazwisko;
+// 	this-> podstawaPodatku= podstawaPodatku;
+// }
+// double podatekNalzeny()
+// {
+// 	return ((podstawaPodatku*18)/100)-556.02;
+// }
+// void platnik()
+// {
+// 	cout<<imie<<" "<<nazwisko<<" "<<podstawaPodatku;
+// 	cout<<endl<<"=================================";
+// 	cout<<endl;
+// }
+// double netto()
+// {
+// 	return podstawaPodatku-podatekNalzeny();
+// }
+
+
+// };
+
+// int main()
+// {
+// 	podatekDochodowy* o1 = new podatekDochodowy("Justyna","Jelińska",12000);
+// 	podatekDochodowy* o2 = new podatekDochodowy("Iga","Jelińska",10000);
+// 	podatekDochodowy* o3 = new podatekDochodowy("Paxiao","Maxiao vel R",15000);
+// 	podatekDochodowy* o4 = new podatekDochodowy("Tymek","Dymek",6000);
+// 	podatekDochodowy* o5 = new podatekDochodowy("Tomasz","Jeliński",5000);
+// 	cout<<endl<<"wysokość podatku należnego wynosi: "<<endl;
+// 	o1->platnik();
+// 	cout<<o1->podatekNalzeny();
+// 	cout<<endl<<o1->netto();
+// 	cout<<endl;
+// 	o2->platnik();
+// 	cout<<o2->podatekNalzeny();
+// 	cout<<endl<<o2->netto();
+// 	cout<<endl;
+// 	o3->platnik();
+// 	cout<<o3->podatekNalzeny();
+// 	cout<<endl<<o3->netto();
+// 	cout<<endl;
+// 	o4->platnik();
+// 	cout<<o4->podatekNalzeny();
+// 	cout<<endl<<o4->netto();
+// 	cout<<endl;
+// 	o5->platnik();
+// 	cout<<o5->podatekNalzeny();
+// 	cout<<endl<<o5->netto();
+// 	return 0;
+// }
+
+// 12. Napisz program, który tworzy klasę Pracownik, o polach: imię, nazwisko, ulica, nr_domu,
+// kod_pocztowy, miejscowość. Napisać funkcję, która wczytuje dane, oraz funkcję wyświetlającą w
+// postaci wizytowki, np.:
+// ----------------------
+// Jan Kowalski
+// ul. Długa 20
+// 00-000 Warszawa
+// ----------------------
+
+// #include<iostream>
+// #include<math.h>
+// #include<iomanip>
+// using namespace std;
+
+// class pracownik
+// {
+// private:
+// 	string imie,nazwisko,ulica,miejscowosc,kod,nrDomu;
+// public:
+// pracownik()
+// // pracownik(string imie,string nazwisko, string ulica,string miejscowosc,string kod,string nrDomu)
+// // :imie(imie),nazwisko(nazwisko),ulica(ulica),miejscowosc(miejscowosc),kod(kod),nrDomu(nrDomu)
+//  {
+// // 	this-> imie= imie;
+// // 	this-> imie= nazwisko;
+// // 	this-> imie= ulica;
+// // 	this-> imie= miejscowosc;
+// // 	this-> imie= kod;
+// // 	this-> imie= nrDomu;
+//  }
+// void dane()
+// {
+// 	cout<<endl<<"wpr.dane ";
+// 	cout<<endl<<"imie: ";
+// 	cin>>imie;
+// 	cout<<endl<<"nazwisko: ";
+// 	cin>>nazwisko;
+// 	cout<<endl<<"ulica: ";
+// 	cin>>ulica;
+// 	cout<<endl<<"nr domu: ";
+// 	cin>>nrDomu;
+// 	cout<<endl<<"kod: ";
+// 	cin>>kod;
+// 	cout<<endl<<"miejscowosc: ";
+// 	cin>>miejscowosc;
+// 	cout<<endl<<"--------------------";
+// }
+// void out()
+// {
+// 	cout<<endl<<"====================";
+// 	cout<<endl<<imie<<"\t"<<nazwisko;
+// 	cout<<endl<<"ul."<<"\t"<<ulica<<" "<<nrDomu;
+// 	cout<<endl<<kod<<"\t"<<miejscowosc;
+// 	cout<<endl<<"====================";
+// }
+
+// };
+
+// int main()
+// {
+	
+// 	//pracownik* p1 = new pracownik("Adi","Dasmen","Jakataka","NY","321-510","20/1");
+// 	pracownik p1;
+// 	p1.dane();
+// 	p1.out();
+// 	return 0;
+// }
+
+
+// 13. Napisz program, który tworzy klasę Rachunek o polach: data, wartosc_netto, podatek,
+// wartosc_brutto. Napisać funkcję, która wczytuje datę, wartość netto, oraz funkcję, która oblicza
+// wartość podatku oraz wartość brutto dla stawki 23%.
