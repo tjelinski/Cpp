@@ -2012,57 +2012,127 @@ znajdujących się na przekątnej;
 
 //3. / 4. Napisz program obliczający pole powierzchni i objętość kuli (klasa Kula o polu r). 
 
+// #include<iostream>
+// #include<math.h>
+// #include<iomanip>
+// using namespace std;
+
+// class P_V_k{
+
+// private:
+// float r;//,p,v;
+
+// public:
+// float p,v;
+
+// //P_V_k(){}
+
+// P_V_k(float r){
+// this-> r = r;
+// }
+
+// //friend void P(P_V_k* pvk1,float r,float p);
+// friend void P(P_V_k pvk1, float r);
+// //friend void V(P_V_k* pvk2,float r,float v);
+// friend void V(P_V_k pvk2, float r);
+
+// void out(){
+// 	cout<<"obiekt o 'r':"<<r<<endl;
+// }
+// void out2(){
+// 	cout<<endl<<"r: "<<r<<" pole: "<<p<<endl;
+// 	cout<<endl<<"r: "<<r<<" objetość: "<<endl<<v;
+// }
+
+// };
+// void P(P_V_k *pvk1,float r){
+// //void P(P_V_k pvk1, float r){
+// 	//pvk1.p=4*M_PI*r*r;
+// 	pvk1->p=4*M_PI*r*r;
+// }
+
+// void V(P_V_k *pvk2,float r){
+// //void V(P_V_k pvk2, float r){
+// 	//pvk2.v=4*(M_PI*r*r*r)/3;
+// 	pvk2->v=4*(M_PI*r*r*r)/3;
+// }
+
+// int main(){
+// 	cout<<endl<<"obl. pole i objętość kuli"<<endl;
+	
+// 	P_V_k *pvkW = new P_V_k(6);
+// 	pvkW->out();
+// 	P(pvkW,6);
+// 	V(pvkW,6);
+// 	//P_V_k pvkW1;
+// 	//pvkW1.out();
+// 	pvkW->out2();
+	
+// 	return 0;
+// }
+
+//5. Napisz program obliczający pole powierzchni walca oraz jego objęto (klasa Walec o polach r,l).
+
 #include<iostream>
 #include<math.h>
 #include<iomanip>
 using namespace std;
 
-class P_V_k{
+class walec{
 
 private:
-float r;//,p,v;
+float r,h;
 
 public:
-float p,v;
-P_V_k(float r){
-this-> r = r;
+float pp,p,v;
+
+walec(){}
+
+walec(float r, float h){
+	this->r = r;
+	this->h = h;
 }
 
-//friend void P(P_V_k* pvk1,float r,float p);
-friend void P(P_V_k pvk1, float r,float p);
-//friend void V(P_V_k* pvk2,float r,float v);
-friend void V(P_V_k pvk2, float r,float v);
+friend void P(walec a){};
+friend void Pp(walec b, float r, float h){};
+friend void V(walec c, float r, float h){};
 
-void out(){
-	cout<<"obiekt o 'r':"<<r<<endl;
-}
-void out2(){
-	cout<<endl<<"r: "<<r<<" pole: "<<p<<endl;
-	cout<<endl<<"r: "<<r<<" objetość: "<<endl<<v;
+void out() const {
+	cout<<endl<<"pola i objętość walca";
+	cout<<endl<<"pole podstawy: "<<setprecision(6)<<pp;
+	cout<<endl<<"pole: "<<setprecision(6)<<p;
+	cout<<endl<<"objętość: "<<setprecision(6)<<v;
 }
 
+//~walec();
 };
-void P(P_V_k *pvk1,float r){//,float p){
-//void P(P_V_k pvk1, float r){//,float p){
-	//pvk1.p=4*M_PI*r*r;
-	pvk1->p=4*M_PI*r*r;
+
+void P(walec* a, float r, float h){
+	a->p=2*M_PI*r*(r+h);
 }
 
-void V(P_V_k *pvk2,float r){//,float v){
-//void V(P_V_k pvk2, float r,float v){
-	//pvk2.v=4/3*(M_PI*r*r*r);
-	pvk2->v=4*(M_PI*r*r*r)/3;
+void Pp(walec* b, float r, float h){
+	b->pp=2*M_PI*r*h;
+}
+
+void V(walec* c, float r, float h){
+	c->v=M_PI*r*r*h;
 }
 
 int main(){
-	cout<<endl<<"obl. pole i objętość kuli"<<endl;
-	P_V_k *pvkW = new P_V_k(6);
-	pvkW->out();
-	P(pvkW,6);
-	V(pvkW,6);
-	//pvk1->P();
-	//pvk1->V();
-	pvkW->out2();
+	walec* w1 = new walec(5,5);
+	P(w1,5,5);
+	Pp(w1,5,5);
+	V(w1,5,5);
+	w1->out();
 	
-	return 0;
+	cout<<endl;
+	
+	walec *w2 = new walec(6,6);
+	P(w2,6,6);
+	Pp(w2,6,6);
+	V(w2,6,6);
+	w2->out();
+	
+return 0;
 }
